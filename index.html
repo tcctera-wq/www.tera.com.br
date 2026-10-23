@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERA</title>
+    <!-- Favicon (Símbolo na aba do navegador) -->
+    <link rel="icon" type="image/png" href="img/claro.png">
+    <!-- Referenciando os Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <nav id="mainNavbar">
+        <div class="container nav-container">
+            <!-- LOGO: Ícone + Texto -->
+            <a href="#" class="logo logo-container">
+                <!-- Ícone da marca -->
+                <div class="logo-icon-wrap">
+                    <img src="img/logo_icon_escuro.png" alt="Tera Logo" class="logo-dark logo-icon-img">
+                    <img src="img/logo_icon_claro.png" alt="Tera Logo" class="logo-light logo-icon-img">
+                </div>
+                <!-- Nome TERA -->
+                <div class="logo-text-block">
+                    <div class="logo-wordmark-wrap">
+                        <img src="img/logo_wordmark_escuro.png" alt="TERA" class="logo-dark logo-wordmark-img">
+                        <img src="img/logo_wordmark_claro.png" alt="TERA" class="logo-light logo-wordmark-img">
+                    </div>
+                </div>
+            </a>
+
+            <!-- NAV PILL CONTAINER (DESKTOP) -->
+            <div class="nav-pill-box">
+                <div class="nav-links">
+                    <a href="#hero" data-i18n="nav_home">INÍCIO</a>
+                    <a href="#sobre" data-i18n="nav_identidade">IDENTIDADE</a>
+                    <a href="#equipe" data-i18n="nav_time">TIME</a>
+                    <a href="#servicos" data-i18n="nav_servicos">SERVIÇOS</a>
+                    <a href="#contato" data-i18n="nav_contato">CONTATO</a>
+                </div>
+
+                <div class="nav-divider"></div>
+
+                <div class="nav-controls">
+                    <button id="langToggle" aria-label="Mudar Idioma" class="lang-pill-btn">EN</button>
+
+                    <button id="themeToggle" aria-label="Mudar Tema" class="theme-pill-btn">
+                        <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+
+                    <button id="navOpenProposta" class="nav-proposta-btn" type="button" aria-label="Solicitar Proposta Comercial">
+                        Solicitar Proposta
+                    </button>
+                </div>
+            </div>
+
+            <!-- BOTÃO MENU HAMBÚRGUER (MOBILE) - 3 LINHAS PERFEITAS -->
+            <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="mobileMenu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- MENU HAMBÚRGUER RETRÁTIL MOBILE -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <div class="mobile-menu-container">
+                <!-- LINKS DE NAVEGAÇÃO -->
+                <div class="mobile-nav-links">
+                    <a href="#hero" class="mobile-nav-link" data-i18n="nav_home">INÍCIO</a>
+                    <a href="#sobre" class="mobile-nav-link" data-i18n="nav_identidade">IDENTIDADE</a>
+                    <a href="#equipe" class="mobile-nav-link" data-i18n="nav_time">TIME</a>
+                    <a href="#servicos" class="mobile-nav-link" data-i18n="nav_servicos">SERVIÇOS</a>
+                    <a href="#contato" class="mobile-nav-link" data-i18n="nav_contato">CONTATO</a>
+
+                    <!-- BOTÃO PROPOSTA NO MENU MOBILE -->
+                    <button id="mobileNavOpenProposta" class="mobile-proposta-btn" type="button" data-open-modal="proposta" aria-label="Solicitar Proposta Comercial">
+                        <span data-i18n="hero_btn_proposta">Solicitar Proposta</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="mobile-menu-divider"></div>
+
+                <!-- SELETORES DE IDIOMA E TEMA NA PARTE INFERIOR -->
+                <div class="mobile-menu-footer">
+                    <!-- Seletor de Idioma -->
+                    <div class="mobile-footer-item">
+                        <span class="mobile-footer-label">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span data-i18n="mobile_lang_title">Idioma</span>
+                        </span>
+                        <div class="mobile-segmented-control" id="mobileLangSegmented">
+                            <button type="button" class="mobile-segment-btn active" data-lang-opt="pt" aria-label="Português">PT</button>
+                            <button type="button" class="mobile-segment-btn" data-lang-opt="en" aria-label="English">EN</button>
+                        </div>
+                    </div>
+
+                    <!-- Seletor de Tema -->
+                    <div class="mobile-footer-item">
+                        <span class="mobile-footer-label">
+                            <svg class="mobile-theme-label-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <span data-i18n="mobile_theme_title">Aparência</span>
+                        </span>
+                        <div class="mobile-segmented-control" id="mobileThemeSegmented">
+                            <button type="button" class="mobile-segment-btn" data-theme-opt="light" aria-label="Tema Claro">
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                                <span data-i18n="theme_light">Claro</span>
+                            </button>
+                            <button type="button" class="mobile-segment-btn" data-theme-opt="dark" aria-label="Tema Escuro">
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <span data-i18n="theme_dark">Escuro</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BACKDROP PARA FECHAR AO CLICAR FORA -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+    <!-- INÍCIO (HERO) -->
+    <section id="hero">
+        <!-- Aura de brilho azul suave no canto superior esquerdo -->
+        <div class="hero-bg-glow"></div>
+
+        <!-- Bolhas 3D flutuantes em vidro (Glassmorphism Spheres) -->
+        <div class="hero-glass-bubbles">
+            <div class="glass-bubble bubble-1"></div>
+            <div class="glass-bubble bubble-2"></div>
+            <div class="glass-bubble bubble-3"></div>
+            <div class="glass-bubble bubble-4"></div>
+            <div class="glass-bubble bubble-5"></div>
+            <div class="glass-bubble bubble-6"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-text-block">
+                <h1 class="hero-main-heading fade-up-text">
+                    <span class="hero-text-sub" data-i18n="hero_title_sub">Desenvolvimento de<br>Projetos Web</span>
+                    <span class="hero-text-main" data-i18n="hero_title_main">Saia da bolha comum</span>
+                </h1>
+                <div class="hero-underline fade-up-btn"></div>
+                <div class="hero-cta-box fade-up-btn">
+                    <button id="heroOpenProposta" class="btn pulse-btn hero-cta-btn" type="button" aria-label="Solicitar Proposta Comercial">
+                        <span>Solicitar Proposta</span>
+                        <svg class="hero-btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A EMPRESA / QUEM SOMOS NÓS -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="sobre_sec_title">Quem nós somos</h2>
+            <div class="about-grid">
+                <!-- Imagem Ilustrativa Tecnológica -->
+                <div class="about-image-placeholder reveal" style="padding: 0; background: none;">
+                    <img src="img/quem_somos.png" alt="TERA Desenvolvimento e Design" class="about-photo"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                </div>
+                <div class="about-text reveal" style="transition-delay: 0.2s;">
+                    <h2 data-i18n="sobre_title">A Excelência como Padrão</h2>
+                    <p data-i18n="sobre_text">Inspirada na origem grega de algo grandioso, a TERA nasceu para romper o
+                        comum.
+                        Enquanto muitos se mantêm seguros na bolha de padrões previsíveis, nós somos
+                        o elemento que projeta para fora, desafiando limites em um mercado saturado.
+                        Nossa missão é clara: ajudar marcas a abandonarem o convencional para atingirem
+                        um novo patamar de excelência. Mais do que resultados, entregamos a evolução
+                        necessária para quem ousa ir além. Na TERA, o sucesso é o resultado natural de
+                        quem escolhe romper barreiras todos os dias.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- NOSSAS SOLUÇÕES / SERVIÇOS (DIRETO E OBJETIVO) -->
+    <section id="servicos" class="section" style="background: none; z-index: 5;">
+        <div class="container">
+            <div class="section-header-wrap reveal">
+                <h2 class="section-title" data-i18n="serv_sec_title">Nossas Soluções</h2>
+                <p class="section-subtitle" data-i18n="serv_sub_title">Engenharia de software, design e processos para acelerar o seu negócio sem enrolação.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- 01. Presença Digital & Web -->
+                <div class="service-card reveal grid-delay-1">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_1_tag">WEB & CONVERSÃO</span>
+                        <h3 class="service-title" data-i18n="serv_1_tit">Presença Digital & Web</h3>
+                        <p class="service-desc" data-i18n="serv_1_desc">Desenvolvimento de sites de alta conversão, portais e landing pages responsivas.</p>
+                    </div>
+                </div>
+
+                <!-- 02. Infraestrutura de Redes -->
+                <div class="service-card reveal grid-delay-2">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_2_tag">CONECTIVIDADE & SEGURANÇA</span>
+                        <h3 class="service-title" data-i18n="serv_2_tit">Infraestrutura de Redes</h3>
+                        <p class="service-desc" data-i18n="serv_2_desc">Cabeamento estruturado, servidores e redes corporativas seguras.</p>
+                    </div>
+                </div>
+
+                <!-- 03. Design Estratégico & UI/UX -->
+                <div class="service-card reveal grid-delay-3">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.586 7.586"></path>
+                                <circle cx="11" cy="11" r="2"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_3_tag">IDENTIDADE & UI/UX</span>
+                        <h3 class="service-title" data-i18n="serv_3_tit">Design Estratégico & UI/UX</h3>
+                        <p class="service-desc" data-i18n="serv_3_desc">Identidade visual corporativa, prototipagem e design de produtos.</p>
+                    </div>
+                </div>
+
+                <!-- 04. Gestão Administrativa -->
+                <div class="service-card reveal grid-delay-1">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_4_tag">PROCESSOS & OPERAÇÃO</span>
+                        <h3 class="service-title" data-i18n="serv_4_tit">Gestão Administrativa</h3>
+                        <p class="service-desc" data-i18n="serv_4_desc">Mapeamento de processos, automação de rotinas e eficiência operacional.</p>
+                    </div>
+                </div>
+
+                <!-- 05. Controle Financeiro -->
+                <div class="service-card reveal grid-delay-2">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_5_tag">FINANÇAS & CONTROLE</span>
+                        <h3 class="service-title" data-i18n="serv_5_tit">Controle Financeiro</h3>
+                        <p class="service-desc" data-i18n="serv_5_desc">Planejamento orçamentário, controle de fluxo e viabilidade econômica.</p>
+                    </div>
+                </div>
+
+                <!-- 06. Suporte & Performance -->
+                <div class="service-card reveal grid-delay-3">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-tag" data-i18n="serv_6_tag">SUPORTE & SEGURANÇA</span>
+                        <h3 class="service-title" data-i18n="serv_6_tit">Suporte & Performance</h3>
+                        <p class="service-desc" data-i18n="serv_6_desc">Manutenção contínua, otimização de velocidade e segurança digital.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- NOSSO TIME -->
+    <section id="equipe" class="section">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="team_sec_title">Nosso time</h2>
+            <div class="team-grid">
+
+                <div class="team-member reveal grid-delay-1">
+                    <div class="member-photo">
+                        <img src="img/gustavo.jpeg" alt="Membro Tera 1">
+                    </div>
+                    <div class="member-info">
+                        <h3>Gustavo</h3>
+                        <p data-i18n="team_1_role">Gestor de Desenvolvimento</p>
+                    </div>
+                </div>
+
+                <div class="team-member reveal grid-delay-2">
+                    <div class="member-photo">
+                        <img src="img/juliana.jpeg" alt="Membro Tera 2">
+                    </div>
+                    <div class="member-info">
+                        <h3>Juliana</h3>
+                        <p data-i18n="team_2_role">Gestor ADM/Financeiro</p>
+                    </div>
+                </div>
+
+                <div class="team-member reveal grid-delay-3">
+                    <div class="member-photo">
+                        <img src="img/joao.jpeg" alt="Membro Tera 3">
+                    </div>
+                    <div class="member-info">
+                        <h3>João</h3>
+                        <p data-i18n="team_3_role">Gestor de Design</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- ÁREA DE CONTATOS (FALE CONOSCO) -->
+    <section id="contato" class="section section-contact">
+        <div class="container">
+            <div class="contact-title-area reveal">
+                <h2 class="contact-heading" data-i18n="contact_heading">FALE CONOSCO</h2>
+                <div class="contact-title-bar"></div>
+                <p class="contact-subheading" data-i18n="contact_subheading">
+                    Pronto para transformar seu projeto em realidade? Entre em contato ou venha nos visitar.
+                </p>
+            </div>
+
+            <div class="contact-layout reveal">
+                <!-- PAINEL ESQUERDO: INFORMAÇÕES DE CONTATO -->
+                <div class="contact-info-panel">
+                    <div class="contact-info-list">
+                        <!-- WHATSAPP -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-info-content">
+                                <span class="contact-info-label" data-i18n="contact_label_wpp">WHATSAPP</span>
+                                <a href="https://wa.me/5519991521825" target="_blank" class="contact-info-val">+55 19 99152-1825</a>
+                            </div>
+                        </div>
+
+                        <!-- E-MAIL -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info-content">
+                                <span class="contact-info-label" data-i18n="contact_label_email">E-MAIL</span>
+                                <a href="mailto:tcctera@gmail.com" class="contact-info-val">tcctera@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- HORÁRIO DE ATENDIMENTO -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info-content">
+                                <span class="contact-info-label" data-i18n="contact_label_hours">HORÁRIO DE ATENDIMENTO</span>
+                                <span class="contact-info-val" data-i18n="contact_val_hours">Seg – Sex: 08h às 18h</span>
+                            </div>
+                        </div>
+
+                        <!-- LOCALIZAÇÃO -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-info-content">
+                                <span class="contact-info-label" data-i18n="contact_label_location">LOCALIZAÇÃO</span>
+                                <span class="contact-info-val" data-i18n="contact_val_location">Americana – SP</span>
+                            </div>
+                        </div>
+
+                        <!-- REDES GLOBAIS -->
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-info-content">
+                                <span class="contact-info-label" data-i18n="contact_label_social">REDES GLOBAIS</span>
+                                <a href="https://www.instagram.com/tera_desenvolvimentosdesign?igsh=N3dlcTM4cGw3dDNz" target="_blank" class="contact-info-val">tera</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO INICIAR CONVERSA NO WHATSAPP -->
+                    <a href="https://wa.me/5519991521825" target="_blank" class="contact-wpp-btn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <span data-i18n="contact_btn_wpp">INICIAR CONVERSA NO WHATSAPP</span>
+                    </a>
+                </div>
+
+                <!-- PAINEL DIREITO: MAPA COM LOCALIZAÇÃO -->
+                <div class="contact-map-panel">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Col%C3%A9gio%20Politec,%20Avenida%20Brasil,%202000,%20Americana%20-%20SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização TERA - Colégio Politec Americana">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ SUTIL -->
+    <footer class="site-footer">
+        <div class="container">
+            <p data-i18n="footer_copyright">© 2026 TERA Desenvolvimento & Design. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL WIZARD - SOLICITAÇÃO DE PROPOSTA (7 ETAPAS) -->
+    <div id="modalProposta" class="modal-proposta-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalPropostaTitle">
+        <div class="modal-proposta-card">
+            
+            <!-- CABEÇALHO DO MODAL -->
+            <div class="modal-proposta-header">
+                <div class="modal-header-top">
+                    <span class="modal-step-badge" id="wizardStepBadge">ETAPA 1 DE 7</span>
+                    <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar janela de proposta">&times;</button>
+                </div>
+                <h2 class="modal-proposta-title" id="modalPropostaTitle">Solicitar Proposta Comercial</h2>
+                <p class="modal-proposta-subtitle" id="wizardSubtitle">Qual é o tipo de solução que você precisa desenvolver?</p>
+                
+                <div class="modal-progress-wrap" role="progressbar" aria-valuemin="14" aria-valuemax="100" aria-valuenow="14">
+                    <div class="modal-progress-fill" id="modalProgressFill" style="width: 14%;"></div>
+                </div>
+            </div>
+
+            <!-- CORPO DO MODAL (7 ETAPAS) -->
+            <div class="modal-proposta-body">
+                
+                <!-- ETAPA 1: Solução Desejada (Seleção Única) -->
+                <div class="wizard-step active" data-step="1">
+                    <div class="wizard-options-grid">
+                        <div class="wizard-card" data-step-field="solucao" data-value="Sistema Web / SaaS" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Sistema Web / SaaS</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="solucao" data-value="Aplicativo Mobile" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Aplicativo Mobile</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="solucao" data-value="Site Institucional" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Site Institucional</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="solucao" data-value="Outro Projeto" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Outro Projeto</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 2: Estágio do Projeto (Seleção Única) -->
+                <div class="wizard-step" data-step="2">
+                    <div class="wizard-options-grid single-col">
+                        <div class="wizard-card" data-step-field="estagio" data-value="Ideia Inicial" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18h6"></path>
+                                    <path d="M10 22h4"></path>
+                                    <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Ideia Inicial</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="estagio" data-value="Em Andamento (protótipo/escopo pronto)" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="6" cy="6" r="3"></circle>
+                                    <circle cx="18" cy="18" r="3"></circle>
+                                    <line x1="6" y1="9" x2="6" y2="21"></line>
+                                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Em Andamento (protótipo/escopo pronto)</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="estagio" data-value="Reestruturação / Redesign" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Reestruturação / Redesign</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 3: Recursos Essenciais (Múltipla Seleção) -->
+                <div class="wizard-step" data-step="3">
+                    <div class="wizard-options-grid">
+                        <div class="wizard-card multi-select" data-step-field="recursos" data-value="Painel Admin / Dashboard" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="9"></rect>
+                                    <rect x="14" y="3" width="7" height="5"></rect>
+                                    <rect x="14" y="12" width="7" height="9"></rect>
+                                    <rect x="3" y="16" width="7" height="5"></rect>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Painel Admin / Dashboard</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card multi-select" data-step-field="recursos" data-value="Login & Autenticação" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Login & Autenticação</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card multi-select" data-step-field="recursos" data-value="Pagamentos Online" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Pagamentos Online</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card multi-select" data-step-field="recursos" data-value="Integração com APIs" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Integração com APIs</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 4: Prazo Estimado (Seleção Única) -->
+                <div class="wizard-step" data-step="4">
+                    <div class="wizard-options-grid single-col">
+                        <div class="wizard-card" data-step-field="prazo" data-value="Urgente (menos de 30 dias)" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Urgente (menos de 30 dias)</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="prazo" data-value="1 a 3 Meses" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">1 a 3 Meses</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="prazo" data-value="Flexível / Sem pressa" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 14 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Flexível / Sem pressa</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 5: Expectativa de Investimento (Seleção Única) -->
+                <div class="wizard-step" data-step="5">
+                    <div class="wizard-options-grid">
+                        <div class="wizard-card" data-step-field="investimento" data-value="Até R$ 3.000" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Até R$ 3.000</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="investimento" data-value="R$ 3.000 a R$ 8.000" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">R$ 3.000 a R$ 8.000</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="investimento" data-value="R$ 8.000 a R$ 15.000" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">R$ 8.000 a R$ 15.000</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="investimento" data-value="Acima de R$ 15.000" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 3h12l4 6-10 12L2 9z"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Acima de R$ 15.000</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 6: Como nos Conheceu (Seleção Única) -->
+                <div class="wizard-step" data-step="6">
+                    <div class="wizard-options-grid">
+                        <div class="wizard-card" data-step-field="origem" data-value="Indicação" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Indicação</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="origem" data-value="Redes Sociais" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Redes Sociais</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="origem" data-value="Google / Busca" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Google / Busca</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+
+                        <div class="wizard-card" data-step-field="origem" data-value="Outro Canal" role="button" tabindex="0">
+                            <div class="wizard-card-icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="wizard-card-content">
+                                <h3 class="wizard-card-title">Outro Canal</h3>
+                            </div>
+                            <div class="wizard-card-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 7: Dados de Contato e Resumo Dinâmico -->
+                <div class="wizard-step" data-step="7">
+                    <div class="step-contact-wrap">
+                        <div class="wizard-form-group">
+                            <label for="propNome" class="wizard-label">
+                                Nome Completo <span class="wizard-label-req">*</span>
+                            </label>
+                            <input type="text" id="propNome" class="wizard-input" placeholder="Ex: Maria Silva" autocomplete="name" required>
+                        </div>
+
+                        <div class="wizard-form-group">
+                            <label for="propWhats" class="wizard-label">
+                                WhatsApp / Telefone <span class="wizard-label-req">*</span>
+                            </label>
+                            <input type="tel" id="propWhats" class="wizard-input" placeholder="(99) 99999-9999" maxlength="15" autocomplete="tel" required>
+                        </div>
+
+                        <!-- BLOCO RESUMO DO PROJETO EM TEMPO REAL -->
+                        <div class="wizard-summary-box">
+                            <div class="wizard-summary-header">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Resumo do Projeto</span>
+                            </div>
+                            <ul class="wizard-summary-list">
+                                <li class="wizard-summary-item">
+                                    <span>Solução Desejada</span>
+                                    <strong id="sumSolucao">-</strong>
+                                </li>
+                                <li class="wizard-summary-item">
+                                    <span>Estágio do Projeto</span>
+                                    <strong id="sumEstagio">-</strong>
+                                </li>
+                                <li class="wizard-summary-item">
+                                    <span>Recursos Essenciais</span>
+                                    <strong id="sumRecursos">-</strong>
+                                </li>
+                                <li class="wizard-summary-item">
+                                    <span>Prazo Estimado</span>
+                                    <strong id="sumPrazo">-</strong>
+                                </li>
+                                <li class="wizard-summary-item">
+                                    <span>Investimento</span>
+                                    <strong id="sumInvestimento">-</strong>
+                                </li>
+                                <li class="wizard-summary-item">
+                                    <span>Como nos Conheceu</span>
+                                    <strong id="sumOrigem">-</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RODAPÉ DE NAVEGAÇÃO DO MODAL -->
+            <div class="modal-proposta-footer">
+                <div class="wizard-footer-left">
+                    <button type="button" class="wizard-btn wizard-btn-back" id="wizardBtnBack" style="display: none;">
+                        &larr; Voltar
+                    </button>
+                </div>
+                <div class="wizard-footer-right">
+                    <button type="button" class="wizard-btn wizard-btn-next" id="wizardBtnNext" disabled>
+                        <span>Avançar</span> &rarr;
+                    </button>
+                    <button type="button" class="wizard-btn wizard-btn-whatsapp" id="wizardBtnWhatsApp" style="display: none;">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.6c.13.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+                        </svg>
+                        <span>Enviar via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Referenciando os Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- SCRIPT DO MODAL WIZARD INTERATIVO EM 7 ETAPAS -->
+    <script>
+    (function() {
+        // Estado do Wizard
+        var currentStep = 1;
+        var totalSteps = 7;
+        var wizardData = {
+            solucao: '',
+            estagio: '',
+            recursos: [],
+            prazo: '',
+            investimento: '',
+            origem: '',
+            nome: '',
+            whats: ''
+        };
+
+        var stepSubtitles = {
+            1: "Qual é o tipo de solução que você precisa desenvolver?",
+            2: "Em qual fase o seu projeto se encontra atualmente?",
+            3: "Selecione as funcionalidades essenciais (você pode marcar mais de uma):",
+            4: "Qual é a sua previsão ou necessidade de prazo para entrega?",
+            5: "Qual a sua estimativa ou faixa de investimento para o projeto?",
+            6: "Como você conheceu a TERA Tecnologia?",
+            7: "Quase pronto! Preencha seus dados para receber o orçamento detalhado:"
+        };
+
+        // Elementos DOM
+        var modalOverlay = document.getElementById('modalProposta');
+        var modalCloseBtn = document.getElementById('modalCloseBtn');
+        var wizardStepBadge = document.getElementById('wizardStepBadge');
+        var wizardSubtitle = document.getElementById('wizardSubtitle');
+        var modalProgressFill = document.getElementById('modalProgressFill');
+        var wizardBtnBack = document.getElementById('wizardBtnBack');
+        var wizardBtnNext = document.getElementById('wizardBtnNext');
+        var wizardBtnWhatsApp = document.getElementById('wizardBtnWhatsApp');
+        var propNome = document.getElementById('propNome');
+        var propWhats = document.getElementById('propWhats');
+
+        // Resumo DOM
+        var sumSolucao = document.getElementById('sumSolucao');
+        var sumEstagio = document.getElementById('sumEstagio');
+        var sumRecursos = document.getElementById('sumRecursos');
+        var sumPrazo = document.getElementById('sumPrazo');
+        var sumInvestimento = document.getElementById('sumInvestimento');
+        var sumOrigem = document.getElementById('sumOrigem');
+
+        // Abertura e Fechamento do Modal
+        function openModal() {
+            if (!modalOverlay) return;
+            modalOverlay.classList.add('active');
+            modalOverlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            updateStepView();
+        }
+
+        function closeModal() {
+            if (!modalOverlay) return;
+            modalOverlay.classList.remove('active');
+            modalOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // Gatilhos de Abertura
+        var triggerNav = document.getElementById('navOpenProposta');
+        var triggerHero = document.getElementById('heroOpenProposta');
+
+        if (triggerNav) triggerNav.addEventListener('click', openModal);
+        if (triggerHero) triggerHero.addEventListener('click', openModal);
+
+        // Suporte para outros botões com o seletor genérico (Cards de Serviços e CTAs)
+        document.querySelectorAll('[data-open-modal="proposta"]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                var presetService = el.getAttribute('data-service');
+                if (presetService) {
+                    var cardToSelect = document.querySelector('.wizard-step[data-step="1"] .wizard-card[data-value="' + presetService + '"]');
+                    if (cardToSelect) {
+                        document.querySelectorAll('.wizard-step[data-step="1"] .wizard-card').forEach(function(c) {
+                            c.classList.remove('selected');
+                        });
+                        cardToSelect.classList.add('selected');
+                        wizardData.solucao = presetService;
+                    }
+                }
+                openModal();
+            });
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+
+        // Fechar ao clicar no backdrop escuro
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) closeModal();
+            });
+        }
+
+        // Fechar com a tecla ESC
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Atualização da Visão do Step Ativo
+        function updateStepView() {
+            // Atualiza badge
+            if (wizardStepBadge) {
+                wizardStepBadge.textContent = 'ETAPA ' + currentStep + ' DE ' + totalSteps;
+            }
+
+            // Atualiza subtítulo dinâmico
+            if (wizardSubtitle) {
+                wizardSubtitle.textContent = stepSubtitles[currentStep] || '';
+            }
+
+            // Atualiza barra de progresso (14% a 100%)
+            if (modalProgressFill) {
+                var progressPercent = Math.round((currentStep / totalSteps) * 100);
+                modalProgressFill.style.width = progressPercent + '%';
+                var progressWrap = modalProgressFill.parentElement;
+                if (progressWrap) {
+                    progressWrap.setAttribute('aria-valuenow', progressPercent);
+                }
+            }
+
+            // Alterna exibição das etapas
+            var allSteps = document.querySelectorAll('.wizard-step');
+            allSteps.forEach(function(stepEl) {
+                var sNum = parseInt(stepEl.getAttribute('data-step'), 10);
+                if (sNum === currentStep) {
+                    stepEl.classList.add('active');
+                } else {
+                    stepEl.classList.remove('active');
+                }
+            });
+
+            // Controle do botão Voltar
+            if (wizardBtnBack) {
+                wizardBtnBack.style.display = (currentStep === 1) ? 'none' : 'inline-flex';
+            }
+
+            // Controle do botão Avançar vs WhatsApp na etapa 7
+            if (currentStep === totalSteps) {
+                if (wizardBtnNext) wizardBtnNext.style.display = 'none';
+                if (wizardBtnWhatsApp) wizardBtnWhatsApp.style.display = 'inline-flex';
+                updateSummary();
+                validateStep7();
+            } else {
+                if (wizardBtnNext) wizardBtnNext.style.display = 'inline-flex';
+                if (wizardBtnWhatsApp) wizardBtnWhatsApp.style.display = 'none';
+                checkStepValidity();
+            }
+        }
+
+        // Validação da Etapa Atual para Habilitar "Avançar"
+        function checkStepValidity() {
+            var isValid = false;
+            switch(currentStep) {
+                case 1:
+                    isValid = Boolean(wizardData.solucao);
+                    break;
+                case 2:
+                    isValid = Boolean(wizardData.estagio);
+                    break;
+                case 3:
+                    isValid = wizardData.recursos && wizardData.recursos.length > 0;
+                    break;
+                case 4:
+                    isValid = Boolean(wizardData.prazo);
+                    break;
+                case 5:
+                    isValid = Boolean(wizardData.investimento);
+                    break;
+                case 6:
+                    isValid = Boolean(wizardData.origem);
+                    break;
+                case 7:
+                    isValid = validateStep7();
+                    break;
+            }
+            if (wizardBtnNext) {
+                wizardBtnNext.disabled = !isValid;
+            }
+        }
+
+        // Atualização do Resumo em Tempo Real
+        function updateSummary() {
+            if (sumSolucao) sumSolucao.textContent = wizardData.solucao || 'Não selecionado';
+            if (sumEstagio) sumEstagio.textContent = wizardData.estagio || 'Não selecionado';
+            if (sumRecursos) {
+                sumRecursos.textContent = (wizardData.recursos && wizardData.recursos.length > 0) 
+                    ? wizardData.recursos.join(', ') 
+                    : 'Nenhum selecionado';
+            }
+            if (sumPrazo) sumPrazo.textContent = wizardData.prazo || 'Não selecionado';
+            if (sumInvestimento) sumInvestimento.textContent = wizardData.investimento || 'Não selecionado';
+            if (sumOrigem) sumOrigem.textContent = wizardData.origem || 'Não selecionado';
+        }
+
+        // Interação dos Cards Selecionáveis
+        document.querySelectorAll('.wizard-card').forEach(function(card) {
+            function handleCardClick() {
+                var isMulti = card.classList.contains('multi-select');
+                var field = card.getAttribute('data-step-field');
+                var val = card.getAttribute('data-value');
+
+                if (isMulti) {
+                    // Múltipla seleção (Etapa 3)
+                    card.classList.toggle('selected');
+                    var activeCards = document.querySelectorAll('.wizard-step[data-step="3"] .wizard-card.selected');
+                    var selectedVals = [];
+                    activeCards.forEach(function(ac) {
+                        selectedVals.push(ac.getAttribute('data-value'));
+                    });
+                    wizardData.recursos = selectedVals;
+                } else {
+                    // Seleção única (Etapas 1, 2, 4, 5, 6)
+                    var parentStep = card.closest('.wizard-step');
+                    if (parentStep) {
+                        parentStep.querySelectorAll('.wizard-card').forEach(function(c) {
+                            c.classList.remove('selected');
+                        });
+                    }
+                    card.classList.add('selected');
+                    if (field) {
+                        wizardData[field] = val;
+                    }
+                }
+
+                checkStepValidity();
+            }
+
+            card.addEventListener('click', handleCardClick);
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleCardClick();
+                }
+            });
+        });
+
+        // Botões de Navegação
+        if (wizardBtnNext) {
+            wizardBtnNext.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStepView();
+                }
+            });
+        }
+
+        if (wizardBtnBack) {
+            wizardBtnBack.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepView();
+                }
+            });
+        }
+
+        // Máscara de Telefone: (99) 99999-9999
+        function formatPhone(v) {
+            var digits = v.replace(/\D/g, '').slice(0, 11);
+            if (digits.length > 10) {
+                return digits.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            } else if (digits.length > 6) {
+                return digits.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+            } else if (digits.length > 2) {
+                return digits.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+            } else if (digits.length > 0) {
+                return '(' + digits;
+            }
+            return '';
+        }
+
+        // Validação da Etapa 7
+        function validateStep7() {
+            var nomeVal = propNome ? propNome.value.trim() : '';
+            var whatsVal = propWhats ? propWhats.value.replace(/\D/g, '') : '';
+            var isValid = (nomeVal.length >= 2 && whatsVal.length >= 10);
+            if (wizardBtnWhatsApp) {
+                wizardBtnWhatsApp.disabled = !isValid;
+                wizardBtnWhatsApp.style.opacity = isValid ? '1' : '0.6';
+                wizardBtnWhatsApp.style.cursor = isValid ? 'pointer' : 'not-allowed';
+            }
+            return isValid;
+        }
+
+        if (propWhats) {
+            propWhats.addEventListener('input', function(e) {
+                e.target.value = formatPhone(e.target.value);
+                validateStep7();
+            });
+        }
+
+        if (propNome) {
+            propNome.addEventListener('input', function() {
+                validateStep7();
+            });
+        }
+
+        // Envio para o WhatsApp da TERA
+        function sendWhatsApp() {
+            var nomeVal = propNome ? propNome.value.trim() : '';
+            var whatsRaw = propWhats ? propWhats.value.trim() : '';
+            var whatsDigits = whatsRaw.replace(/\D/g, '');
+
+            if (nomeVal.length < 2) {
+                if (propNome) {
+                    propNome.classList.add('input-error');
+                    propNome.focus();
+                    setTimeout(function() { propNome.classList.remove('input-error'); }, 1500);
+                }
+                return;
+            }
+
+            if (whatsDigits.length < 10) {
+                if (propWhats) {
+                    propWhats.classList.add('input-error');
+                    propWhats.focus();
+                    setTimeout(function() { propWhats.classList.remove('input-error'); }, 1500);
+                }
+                return;
+            }
+
+            var solucaoTxt = wizardData.solucao || 'Não especificado';
+            var estagioTxt = wizardData.estagio || 'Não especificado';
+            var recursosTxt = (wizardData.recursos && wizardData.recursos.length > 0) 
+                ? wizardData.recursos.join(', ') 
+                : 'Não especificado';
+            var prazoTxt = wizardData.prazo || 'Não especificado';
+            var investimentoTxt = wizardData.investimento || 'Não especificado';
+            var origemTxt = wizardData.origem || 'Não especificado';
+
+            var mensagem = 
+'*SOLICITAÇÃO DE PROPOSTA - TERA*\n\n' +
+'*Nome:* ' + nomeVal + '\n' +
+'*Contato:* ' + whatsRaw + '\n\n' +
+'*DETALHES DO PROJETO:*\n' +
+'• *Tipo de Solução:* ' + solucaoTxt + '\n' +
+'• *Estágio Atual:* ' + estagioTxt + '\n' +
+'• *Recursos:* ' + recursosTxt + '\n' +
+'• *Prazo Estimado:* ' + prazoTxt + '\n' +
+'• *Investimento:* ' + investimentoTxt + '\n' +
+'• *Como nos Conheceu:* ' + origemTxt + '\n\n' +
+'---\n' +
+'*Mensagem enviada via site TERA Tecnologia*';
+
+            var encodedMessage = encodeURIComponent(mensagem);
+            var whatsappUrl = 'https://api.whatsapp.com/send?phone=5519991521825&text=' + encodedMessage;
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        if (wizardBtnWhatsApp) {
+            wizardBtnWhatsApp.addEventListener('click', sendWhatsApp);
+        }
+
+    })();
+    </script>
+</body>
+
+</html>
